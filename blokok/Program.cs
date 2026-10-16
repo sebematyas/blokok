@@ -22,10 +22,49 @@ namespace blokok
                 Console.WriteLine(tompok[i]);
             }
         }
+        static void Csere()
+        {
+
+            Console.WriteLine("melyik törpöt csereljük le ");
+            string nev = Console.ReadLine();
+            int hanyadik = 8;
+            for (int i = 0; i < tompok.Length; i++)
+            {
+                if (tompok[i] == nev)
+                {
+
+                    hanyadik = i;
+
+                }
+
+
+            }
+            if (hanyadik == 8)
+            {
+                Console.WriteLine("nincs ilyen törpe a listaba ");
+            }
+            int index = 0;
+            while (index < tompok.Length && tompok[index] != nev)
+            {
+                index += 1;
+            }
+            if (index < tompok.Length)
+            {
+                Console.WriteLine("meklik törpöt cseréljük le ");
+                string ujnev = Console.ReadLine();
+                tompok[index] = ujnev;
+                Console.WriteLine("lecserelve");
+            }
+            else
+            {
+                Console.WriteLine("nincs ilyen törpe a listában");
+
+            }
+        }
         static void Main(string[] args)
         {
             Torpokletrehozasa();
-
+            Csere();
         }
     }
 }
